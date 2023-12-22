@@ -8,6 +8,7 @@ const pageWrapper = css({
   padding: "0",
   position: "relative",
   width: "100%",
+  minHeight: "100vh",
 });
 
 const PageContainer: FC<{ children: ReactNode }> = memo(
