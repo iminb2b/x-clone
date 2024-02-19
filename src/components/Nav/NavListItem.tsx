@@ -8,6 +8,19 @@ import { useRouter } from "next/router";
 const link = css`
   color: ${colors.textPrimary};
   transition: all 0.3s ease;
+  position: relative;
+
+  &:hover {
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      height: 2px;
+      background-color: ${colors.textPrimary};
+      width: 80%;
+      left: 10%;
+    }
+  }
 `;
 
 const buttonLink = css`

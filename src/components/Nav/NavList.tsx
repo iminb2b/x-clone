@@ -1,10 +1,10 @@
-import Link from "next/link";
 import { FC, useContext } from "react";
 import { css } from "@emotion/react";
 import { LanguageContext } from "@/context/LanguageContext";
 import routeLinks from "@/routeLinks";
 import NavListItem from "./NavListItem";
 import { useRouter } from "next/router";
+import LanguageLinks from "./LanguageLinks";
 
 const container = css`
   display: flex;
@@ -51,6 +51,8 @@ const NavList: FC = () => {
           isActive={router.asPath === item.url}
         />
       ))}
+
+      <LanguageLinks lang={lang} />
     </div>
   );
 };
