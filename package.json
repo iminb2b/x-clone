@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "ts-json-schema-generator": "ts-json-schema-generator --no-type-check --out='src/strings/strings.schema.json' --path='src/types/stringTypes.ts' --tsconfig='tsconfig.json' --type='Strings'"
+  },
+  "browser": {
+    "src/strings/strings.schema.json": false
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -14,6 +18,7 @@
     "@mui/icons-material": "^5.15.1",
     "@mui/material": "^5.15.1",
     "googleapis": "^129.0.0",
+    "ts-json-schema-generator": "^1.1.2",
     "next": "14.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
