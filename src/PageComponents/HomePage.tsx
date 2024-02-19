@@ -1,10 +1,11 @@
-import HomePageFooter from "@/components/HomePage/HomePageFooter";
+import HomePageProjects from "@/components/HomePage/HomePageProjects";
 import HomePageHero from "@/components/HomePage/HomePageHero";
 import PageContainer from "@/components/PageContent";
 import { NextPage } from "next";
 import PageMeta from "@/components/PageMeta";
 import HomePageMySkills from "@/components/HomePage/HomePageMySkills";
 import HomePageMyServices from "@/components/HomePage/HomePageMySevices";
+import HomePageAboutMe from "@/components/HomePage/HomePageAboutMe";
 
 const HomePage: NextPage = () => {
   return (
@@ -16,8 +17,9 @@ const HomePage: NextPage = () => {
       />
       <HomePageHero />
       <HomePageMyServices />
+      <HomePageAboutMe />
       <HomePageMySkills />
-      <HomePageFooter />
+      <HomePageProjects />
     </PageContainer>
   );
 };

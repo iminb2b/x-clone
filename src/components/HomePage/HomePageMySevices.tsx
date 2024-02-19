@@ -26,7 +26,7 @@ const contentWrapper = css`
 `;
 
 const service = css`
-  border-radius: 2rem;
+  border-radius: 1rem;
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -47,7 +47,7 @@ const service2Container = css`
   background-color: ${colors.green};
 `;
 const service3Container = css`
-  border-radius: 2rem;
+  border-radius: 1rem;
 `;
 const img1 = css`
   width: 100%;
@@ -75,13 +75,13 @@ const img4 = css`
 const blockContainer = css`
   height: 50%;
   display: flex;
-  border-radius: 2rem;
+  border-radius: 1rem;
 `;
 
 const block1 = css`
   height: 50%;
   background-color: ${colors.yellow};
-  border-radius: 2rem;
+  border-radius: 1rem;
   border-bottom-left-radius: 0;
   padding: 2rem 2rem;
 `;
@@ -89,7 +89,7 @@ const block2 = css`
   width: 40%;
   height: 100%;
   background-color: ${colors.yellow};
-  border-radius: 2rem;
+  border-radius: 1rem;
   border-top-right-radius: 0;
   border-top-left-radius: 0;
   padding: 0 1rem 1rem;
@@ -98,7 +98,7 @@ const block3 = css`
   background-color: transparent;
   height: 100%;
   width: 60%;
-  border-radius: 2rem;
+  border-radius: 1rem;
   position: relative;
   padding: 1rem 0 0 1rem;
 
@@ -117,7 +117,7 @@ const block3 = css`
 
 const block4 = css`
   background-color: ${colors.purple};
-  border-radius: 2rem;
+  border-radius: 1rem;
   height: 100%;
   display: flex;
   justify-content: center;
