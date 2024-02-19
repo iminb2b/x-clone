@@ -4,6 +4,7 @@ import { css } from "@emotion/react";
 import { NavInfo } from "./NavList";
 import colors from "@/value/colors";
 import { useRouter } from "next/router";
+import buttonStyles from "@/styles/buttonStyles";
 
 const link = css`
   color: ${colors.textPrimary};
@@ -20,22 +21,6 @@ const link = css`
       width: 80%;
       left: 10%;
     }
-  }
-`;
-
-const buttonLink = css`
-  color: ${colors.white};
-  background-color: ${colors.purple};
-  padding: 0.5rem 1rem;
-  border-radius: 3rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border: 2px solid ${colors.purple};
-
-  &:hover {
-    background-color: ${colors.white};
-    color: ${colors.purple};
-    border: 2px solid ${colors.purple};
   }
 `;
 
@@ -60,7 +45,7 @@ const NavListItem: FC<{
 }> = ({ item, isActive }) => {
   if (item.isButtonLink)
     return (
-      <Link href={item.url} css={buttonLink}>
+      <Link href={item.url} css={buttonStyles}>
         {item.name}
       </Link>
     );

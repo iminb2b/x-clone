@@ -2,10 +2,8 @@ import { css, Global } from "@emotion/react";
 import { FC, memo, ReactNode } from "react";
 import Header from "./Header";
 import globalStyles from "@/styles/globalStyles";
-import { contentContainer } from "@/styles/generalStyles";
 import { cursorStyle, outerCursorStyle } from "@/styles/cursorStyles";
 import AnimatedCursor from "react-animated-cursor";
-import colors from "@/value/colors";
 
 const pageContent = css`
   flex: 1 0 auto;

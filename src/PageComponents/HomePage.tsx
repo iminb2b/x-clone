@@ -1,8 +1,10 @@
 import HomePageFooter from "@/components/HomePage/HomePageFooter";
-import HomePageContent from "@/components/HomePage/HomePageContent";
+import HomePageHero from "@/components/HomePage/HomePageHero";
 import PageContainer from "@/components/PageContent";
 import { NextPage } from "next";
 import PageMeta from "@/components/PageMeta";
+import HomePageMySkills from "@/components/HomePage/HomePageMySkills";
+import HomePageMyServices from "@/components/HomePage/HomePageMySevices";
 
 const HomePage: NextPage = () => {
   return (
@@ -12,7 +14,9 @@ const HomePage: NextPage = () => {
         description={"Nhung Nguyen"}
         image={null}
       />
-      <HomePageContent />
+      <HomePageHero />
+      <HomePageMyServices />
+      <HomePageMySkills />
       <HomePageFooter />
     </PageContainer>
   );

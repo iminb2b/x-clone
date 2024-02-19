@@ -4,12 +4,16 @@ import { css } from "@emotion/react";
 import colors from "@/value/colors";
 import routeLinks from "@/routeLinks";
 import { match } from "ts-pattern";
+import ViFlagIcon from "@/icons/ViFlagIcon";
+import CaFlagIcon from "@/icons/CaFlagIcon";
 
 const link = css`
   color: ${colors.textPrimary};
   transition: all 0.3s ease;
   position: relative;
-
+  display: flex;
+  gap: 0.35rem;
+  /*
   &:hover {
     &::after {
       content: "";
@@ -20,29 +24,23 @@ const link = css`
       width: 80%;
       left: 10%;
     }
-  }
-`;
-
-const activeLink = css`
-  color: ${colors.purple};
-  position: relative;
+  } */
 `;
 
 const LanguageLinks: FC<{
   lang: "vi" | "en";
 }> = ({ lang }) => {
-  console.log(lang);
-
   return match(lang)
     .with("en", () => (
       <Link href={routeLinks.homePage({ lang: "vi" })} css={link}>
-        VI
+        Vi |<ViFlagIcon />
       </Link>
     ))
     .with("vi", () => (
       <div>
         <Link href={routeLinks.homePage({ lang: "en" })} css={link}>
-          EN
+          En|
+          <CaFlagIcon />
         </Link>
       </div>
     ))
