@@ -1,5 +1,5 @@
 {
-  "name": "google-clone",
+  "name": "iminb2b",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -13,6 +13,7 @@
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.15.1",
     "@mui/material": "^5.15.1",
+    "googleapis": "^129.0.0",
     "next": "14.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
