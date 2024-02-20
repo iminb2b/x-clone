@@ -5,7 +5,7 @@ import { css } from "@emotion/react";
 import { contentContainer } from "@/styles/generalStyles";
 import messageImg from "@/assets/images/message.png";
 import githubImg from "@/assets/images/github.png";
-import linkedInImg from "@/assets/images/linkedIn.png";
+import linkedInImg from "@/assets/images/linkedin.png";
 import emailImg from "@/assets/images/email.png";
 import Link from "next/link";
 import colors from "@/value/colors";
