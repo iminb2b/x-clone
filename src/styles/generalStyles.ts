@@ -28,7 +28,7 @@ export const boxWrapper = css`
 
   background-color: ${colors.white};
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  border-radius: 1rem;
+  border-radius: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;

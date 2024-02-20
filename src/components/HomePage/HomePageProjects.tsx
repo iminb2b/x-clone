@@ -11,7 +11,9 @@ import HomePageProjectsListItem from "./HomePageProjectsListItem";
 import Link from "next/link";
 import routeLinks from "@/routeLinks";
 import { LanguageContext } from "@/context/LanguageContext";
-
+import dolla from "@/assets/images/dolla.png";
+import portfolio from "@/assets/images/portfolio.png";
+import explorix from "@/assets/images/explorix.png";
 const container = css`
   ${contentContainer}
 
@@ -31,12 +33,13 @@ const contentWrapper = css`
 `;
 
 const projectsContainer = css`
-  border-radius: 1rem;
+  border-radius: 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 2rem;
+  grid-gap: 4rem;
   margin-bottom: 3rem;
   width: 100%;
+  padding: 3rem 0;
 
   @media screen and (max-width: 720px) {
     grid-template-columns: 1fr;
@@ -44,7 +47,7 @@ const projectsContainer = css`
 `;
 
 const link = css`
-  border-radius: 1rem;
+  border-radius: 2rem;
   border: 3px solid ${colors.purple};
   padding: 1rem 2rem;
   color: ${colors.purple};
@@ -72,28 +75,28 @@ const HomePageProjects: FC = () => {
 
   const projectInfos: ProjectInfo[] = [
     {
-      img: "",
+      img: portfolio.src,
       title: "Portfolio",
       description:
         "This project is a personal portfolio website designed to showcase my work and skills as a [Your Profession]. It features a clean and modern design, with easy navigation to view my projects, experience, and contact information. The website is responsive, ensuring a seamless experience across devices. Explore my portfolio to see examples of my work and learn more about my background and expertise",
       tool: ["Typescript", "NextJs", "Emotion"],
-      link: "iminb2b.com",
+      link: "https://iminb2b.com",
     },
     {
-      img: "",
+      img: explorix.src,
       title: "Explorix",
       description:
         "This travel website project is a comprehensive platform designed to inspire and assist travelers in planning their next adventure. With stunning visuals, detailed destination guides, and seamless booking functionality, the website offers a user-friendly experience. Explore breathtaking destinations, discover hidden gems, and plan your dream getaway with ease.",
       tool: ["GraphQl", "Gatsby", "Typescript", "NextJs", "Emotion"],
-      link: "explorix.projects.iminb2b.com",
+      link: "https://explorix.projects.iminb2b.com",
     },
     {
-      img: "",
+      img: dolla.src,
       title: "Dolla",
       description:
         "This website project is a comprehensive platform designed to inspire and assist travelers in planning their next adventure. With stunning visuals, detailed destination guides, and seamless booking functionality, the website offers a user-friendly experience. Explore breathtaking destinations, discover hidden gems, and plan your dream getaway with ease.",
       tool: ["GraphQl", "Gatsby", "Typescript", "NextJs", "Emotion"],
-      link: "explorix.projects.iminb2b.com",
+      link: "https://dolla.projects.iminb2b.com/",
     },
   ];
 

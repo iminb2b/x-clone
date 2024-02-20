@@ -13,9 +13,18 @@ import HomePageMySkillsListItem from "./HomePageMySkillsListItem";
 
 const container = css`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   padding: 5rem 1rem;
-  grid-gap: 1rem;
+  grid-gap: 2rem;
+  width: 100%;
+
+  @media screen and (max-width: 960px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @media screen and (max-width: 688px) {
+    grid-template-columns: 1fr 1fr;
+  }
 `;
 
 export type SkillInfo = {
@@ -45,10 +54,6 @@ const HomePageMySkillsList: FC = () => {
     {
       img: jsIcon.src,
       name: "Javascript",
-    },
-    {
-      img: graphQlIcon.src,
-      name: "",
     },
     {
       img: emotionIcon.src,

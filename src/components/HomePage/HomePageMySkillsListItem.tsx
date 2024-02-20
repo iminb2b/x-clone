@@ -8,9 +8,10 @@ const container = css`
   flex-direction: column;
   justify-content: center;
   padding: 2rem 0;
-  /* border: 2px solid ${colors.purple}; */
-  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 2rem;
   align-items: center;
+  background-color: ${colors.white};
   text-align: center;
   gap: 2rem;
 `;

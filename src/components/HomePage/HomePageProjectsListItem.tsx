@@ -2,13 +2,24 @@ import { FC } from "react";
 import { css } from "@emotion/react";
 import colors from "@/value/colors";
 import { ProjectInfo } from "./HomePageProjects";
+import Link from "next/link";
 
 const projectContainer = css`
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  border-radius: 1rem;
+  border-radius: 2rem;
   background-color: ${colors.white};
   padding: 2rem;
   width: 100%;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 5px 5px 15px 5px ${colors.pink},
+      -9px 5px 15px 5px ${colors.yellow}, -7px -5px 15px 5px #8cff85,
+      12px -5px 15px 5px #80c7ff, 12px 10px 15px 7px #e488ff,
+      -10px 10px 15px 7px #ff616b, -10px -7px 27px 1px #8e5cff,
+      0px 0px 50px 12px rgba(0, 0, 0, 0);
+  }
 `;
 
 const image = css`
@@ -46,8 +57,8 @@ const HomePageProjectsListItem: FC<{ project: ProjectInfo }> = ({
   project,
 }) => {
   return (
-    <div css={projectContainer}>
-      <div css={image}></div>
+    <Link css={projectContainer} href={project.link} target="_blank">
+      <img css={image} src={project.img} />
       <div css={infoContainer}>
         <ul css={toolList}>
           {project.tool.map((item, index) => (
@@ -59,7 +70,7 @@ const HomePageProjectsListItem: FC<{ project: ProjectInfo }> = ({
         <h1 css={title}>{project.title}</h1>
         <p css={description}>{project.description}</p>
       </div>
-    </div>
+    </Link>
   );
 };
 
