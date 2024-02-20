@@ -1,4 +1,8 @@
-export type SharedStrings = {};
+export type SharedStrings = {
+  // button: {
+  //   viewProjects: string;
+  // };
+};
 
 export type Strings = {
   $schema: string;
@@ -7,6 +11,38 @@ export type Strings = {
    * Shared (reused in several components)
    */
   shared: SharedStrings;
+
+  // Header: {
+  //   navLinks: {
+  //     about: string;
+  //     work: string;
+  //     contact: string;
+  //   };
+  // };
+
+  // HomePage: {
+  //   Hero: {
+  //     title: string;
+  //     description: string;
+  //   };
+  // };
+
+  // MyService: {
+  //   title: string;
+  //   performanceOptimization: string;
+  //   accessibility: string;
+  //   frontendBackend: string;
+  // };
+
+  // MySkills: {
+  //   title: string;
+  //   description: string;
+  // };
+
+  // MyProjects: {
+  //   title: string;
+  //   description: string;
+  // };
 };
 
 // Via https://stackoverflow.com/a/47058976/7949868

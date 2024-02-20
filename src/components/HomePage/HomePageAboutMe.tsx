@@ -11,6 +11,7 @@ import { LanguageContext } from "@/context/LanguageContext";
 import colors from "@/value/colors";
 import desktopIcon from "@/assets/images/desktopIcon.png";
 import HomePageExperienceList from "./HomePageExperienceList";
+import FileDownloadIcon from "@mui/icons-material/FileDownload";
 
 const container = css`
   ${contentContainer}
@@ -43,9 +44,20 @@ const infoContainer = css`
   }
 `;
 
+const icon = css`
+  color: ${colors.purple};
+  font-size: 1.25rem;
+`;
+
 const nameText = css`
   font-size: clamp(1.5rem, 3vw, 3rem);
   color: ${colors.purple};
+`;
+
+const downloadLink = css`
+  color: ${colors.purple};
+  align-items: center;
+  display: flex;
 `;
 
 export type ExperienceInfo = {
@@ -124,6 +136,15 @@ const HomePageAboutMe: FC = () => {
               perspective that combines analytical thinking and creativity to
               every project.
             </p>
+            <a
+              href={"/pdf/resume.pdf"}
+              download="Nhung Nguyen - Front-end Developer Resume"
+              target="_blank"
+            >
+              <div css={downloadLink}>
+                <FileDownloadIcon css={icon} /> Download My Resume
+              </div>
+            </a>
           </div>
         </div>
         <HomePageExperienceList experience={educationList} title="Education" />
