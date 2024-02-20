@@ -16,6 +16,7 @@ const container = css`
   ${contentContainer}
 
   margin: auto;
+  width: 100%;
 `;
 const contentWrapper = css`
   position: relative;
@@ -35,6 +36,11 @@ const projectsContainer = css`
   grid-template-columns: 1fr 1fr;
   grid-gap: 2rem;
   margin-bottom: 3rem;
+  width: 100%;
+
+  @media screen and (max-width: 720px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const link = css`
@@ -93,7 +99,7 @@ const HomePageProjects: FC = () => {
 
   return (
     <div css={container}>
-      <div css={contentWrapper}>
+      <div css={contentWrapper} data-aos="fade-up">
         <p css={sectionService}>SERVICE</p>
         <h1 css={sectionTitle}>My Projects</h1>
         <p css={sectionDescription}>

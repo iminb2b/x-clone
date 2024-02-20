@@ -19,6 +19,7 @@ export const sectionDescription = css`
   font-size: clamp(1rem, 2vw, 1.375rem);
   text-align: center;
   max-width: 700px;
+  max-width: 80%;
   line-height: 1.4;
 `;
 

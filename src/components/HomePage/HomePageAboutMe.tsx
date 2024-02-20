@@ -16,19 +16,31 @@ const container = css`
   ${contentContainer}
 
   margin: auto;
+  width: 100%;
 `;
 
 const statementContainer = css`
   display: flex;
   padding: 3rem 5rem 0 3rem;
+
+  @media screen and (max-width: 960px) {
+    flex-direction: column;
+  }
 `;
-const desktop = css``;
+const desktop = css`
+  width: 100%;
+  height: fit-content;
+`;
 const infoContainer = css`
   padding: 4rem 0;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   line-height: 1.6;
+
+  @media screen and (max-width: 960px) {
+    padding: 2rem;
+  }
 `;
 
 const nameText = css`
@@ -91,7 +103,7 @@ const HomePageAboutMe: FC = () => {
 
   return (
     <div css={container}>
-      <div css={boxWrapper}>
+      <div css={boxWrapper} data-aos="fade-up">
         <p css={sectionService}>SERVICE</p>
         <h1 css={sectionTitle}>About Me</h1>
         <p css={sectionDescription}>

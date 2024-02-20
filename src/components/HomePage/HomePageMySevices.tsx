@@ -12,6 +12,7 @@ const container = css`
   display: flex;
   justify-content: center;
   padding: 5rem 0;
+  width: 100%;
 `;
 const contentWrapper = css`
   ${contentContainer}
@@ -22,6 +23,7 @@ const contentWrapper = css`
 
   @media screen and (max-width: 720px) {
     grid-template-columns: 1fr;
+    padding: 1rem 2rem;
   }
 `;
 
@@ -68,9 +70,17 @@ const img2 = css`
 `;
 const img3 = css`
   width: 100%;
+  @media screen and (max-width: 720px) {
+    height: 100%;
+    width: fit-content;
+  }
 `;
 const img4 = css`
   width: 100%;
+  @media screen and (max-width: 720px) {
+    height: 100%;
+    width: fit-content;
+  }
 `;
 const blockContainer = css`
   height: 50%;
@@ -93,6 +103,8 @@ const block2 = css`
   border-top-right-radius: 0;
   border-top-left-radius: 0;
   padding: 0 1rem 1rem;
+  display: flex;
+  justify-content: center;
 `;
 const block3 = css`
   background-color: transparent;
@@ -134,7 +146,10 @@ const HomePageMyServices: FC = () => {
 
   return (
     <div css={container}>
-      <div css={contentWrapper}>
+      <div
+        css={contentWrapper}
+        // data-aos="fade-up"
+      >
         <div css={service1Container}>
           <img
             src={performanceImg.src}

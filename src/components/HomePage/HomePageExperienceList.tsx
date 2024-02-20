@@ -7,6 +7,10 @@ import HomePageExperienceListItem from "./HomePageExperienceListItem";
 const educationContainer = css`
   width: 100%;
   padding: 3rem 7rem;
+
+  @media screen and (max-width: 720px) {
+    padding: 3rem;
+  }
 `;
 
 const mediumTitle = css`

@@ -8,6 +8,7 @@ const projectContainer = css`
   border-radius: 1rem;
   background-color: ${colors.white};
   padding: 2rem;
+  width: 100%;
 `;
 
 const image = css`
@@ -26,6 +27,7 @@ const toolList = css`
   list-style-type: none;
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
 `;
 const toolItem = css`
   color: ${colors.purple};

@@ -8,13 +8,14 @@ import AnimatedCursor from "react-animated-cursor";
 const pageContent = css`
   flex: 1 0 auto;
   width: 100%;
+  height: 100%;
 `;
 
 const pageContainer = css`
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
+  min-height: calc(100vh);
   background-image: url("/images/bgImg.png");
   background-color: #fff;
   background-repeat: repeat-y;

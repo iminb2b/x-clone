@@ -5,12 +5,17 @@ import routeLinks from "@/routeLinks";
 import NavListItem from "./NavListItem";
 import { useRouter } from "next/router";
 import LanguageLinks from "./LanguageLinks";
+import { useDialogStore } from "@ariakit/react";
 
 const container = css`
   display: flex;
   gap: 2rem;
   height: 100%;
   align-items: center;
+
+  @media screen and (max-width: 688px) {
+    display: none;
+  }
 `;
 
 export type NavInfo = {

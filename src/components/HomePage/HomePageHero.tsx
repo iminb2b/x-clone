@@ -1,5 +1,5 @@
 import { FC, useContext } from "react";
-import { css } from "@emotion/react";
+import { css, keyframes } from "@emotion/react";
 import { contentContainer } from "@/styles/generalStyles";
 import Link from "next/link";
 import routeLinks from "@/routeLinks";
@@ -11,6 +11,7 @@ import phone from "@/assets/images/phone.png";
 const container = css`
   display: flex;
   justify-content: center;
+  width: 100%;
 `;
 const contentWrapper = css`
   ${contentContainer}
@@ -23,25 +24,42 @@ const contentWrapper = css`
   height: calc(100vh - 5rem);
   padding-bottom: 5rem;
   width: 100%;
+  text-align: center;
 `;
 const title = css`
-  font-size: 4rem;
+  font-size: clamp(1.5rem, 7vw, 4rem);
   font-weight: bold;
   line-height: 1.4;
 `;
 const description = css`
   margin: 2rem 0;
-  font-size: 1.375rem;
+  font-size: clamp(1rem, 3vw, 1.375rem);
+
   max-width: 700px;
   line-height: 1.5;
+  width: 100%;
   text-align: center;
 `;
+const shaking = keyframes`
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  50% { transform: rotate(0eg); }
+  75% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+`;
+
 const codeIcon = css`
   width: 16.5rem;
   height: 12.375rem;
   position: absolute;
   top: 5vh;
   left: 0;
+  animation: ${shaking} 3s;
+  animation-iteration-count: infinite;
+
+  @media screen and (max-width: 960px) {
+    display: none;
+  }
 `;
 const phoneIcon = css`
   width: 320px;
@@ -49,6 +67,11 @@ const phoneIcon = css`
   position: absolute;
   bottom: 14vh;
   right: 0;
+  animation: ${shaking} 3s;
+  animation-iteration-count: infinite;
+  @media screen and (max-width: 960px) {
+    display: none;
+  }
 `;
 
 const HomePageHero: FC = () => {
@@ -56,7 +79,7 @@ const HomePageHero: FC = () => {
 
   return (
     <div css={container}>
-      <div css={contentWrapper}>
+      <div css={contentWrapper} data-aos="fade-up">
         <img src={code.src} css={codeIcon} />
         <img src={phone.src} css={phoneIcon} />
         <h1 css={title}>Hi I'm min.</h1>
