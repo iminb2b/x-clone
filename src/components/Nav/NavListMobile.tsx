@@ -35,7 +35,9 @@ export type NavInfo = {
 const NavListMobile: FC<{
   dialogStore: DialogStore;
 }> = ({ dialogStore }) => {
-  const { lang, strings } = useContext(AppContext);
+  const {
+    state: { lang, strings },
+  } = useContext(AppContext);
 
   const router = useRouter();
 
