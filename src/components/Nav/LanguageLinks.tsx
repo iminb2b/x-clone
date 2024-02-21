@@ -31,16 +31,24 @@ const LanguageLinks: FC<{
 }> = ({ lang }) => {
   return match(lang)
     .with("en", () => (
-      <Link href={routeLinks.homePage({ lang: "vi" })} css={link}>
+      <a
+        href={routeLinks.homePage({ lang: "vi" })}
+        css={link}
+        aria-label="Vietnamese"
+      >
         Vi |<ViFlagIcon />
-      </Link>
+      </a>
     ))
     .with("vi", () => (
       <div>
-        <Link href={routeLinks.homePage({ lang: "en" })} css={link}>
+        <a
+          href={routeLinks.homePage({ lang: "en" })}
+          css={link}
+          aria-label="English"
+        >
           En|
           <CaFlagIcon />
-        </Link>
+        </a>
       </div>
     ))
     .otherwise(() => null);
