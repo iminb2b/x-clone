@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { StaticImageData } from "next/image";
 import { FC, memo } from "react";
 
 const PageMeta: FC<{
@@ -15,6 +14,7 @@ const PageMeta: FC<{
       <meta name="description" content={description ?? ""} />
       <meta name="twitter:description" content={description ?? ""} />
       <meta property="og:description" content={description ?? ""} />
+      <link rel="icon" href="/m.svg" sizes="any" />
     </Head>
   );
 });

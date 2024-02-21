@@ -145,7 +145,9 @@ const title = css`
 `;
 
 const HomePageMyServices: FC = () => {
-  const { lang } = useContext(AppContext);
+  const {
+    state: { lang },
+  } = useContext(AppContext);
 
   return (
     <div css={container}>
