@@ -8,14 +8,10 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { AppContextType, AppProvider } from "@/context/AppContext";
 import { useEffect } from "react";
+import { redirect } from "next/navigation";
+import routeLinks from "@/routeLinks";
 
 export default function App({ Component, pageProps }: AppProps) {
-  useEffect(() => {
-    AOS.init({
-      duration: 600,
-    });
-  }, []);
-
   const router = useRouter();
 
   const localeInfo = router.asPath.slice(1, 3);
@@ -27,6 +23,16 @@ export default function App({ Component, pageProps }: AppProps) {
     lang: localeInfo === "vi" ? "vi" : "en",
     darkmode: false,
   };
+
+  useEffect(() => {
+    AOS.init({
+      duration: 600,
+    });
+
+    if (localeInfo !== "en" && localeInfo !== "vi") {
+      redirect(routeLinks.homePage({ lang: "en" }));
+    }
+  }, []);
 
   if (pageProps.error) {
     return (
