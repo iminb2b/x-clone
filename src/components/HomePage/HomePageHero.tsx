@@ -78,7 +78,7 @@ const phoneIcon = css`
 
 const HomePageHero: FC = () => {
   const {
-    state: { lang, darkmode },
+    state: { lang, strings, darkmode },
   } = useContext(AppContext);
 
   return (
@@ -86,13 +86,9 @@ const HomePageHero: FC = () => {
       <div css={contentWrapper} data-aos="fade-up">
         <img src={code.src} css={codeIcon} />
         <img src={phone.src} css={phoneIcon} />
-        <h1 css={title}>Hi I'm min.</h1>
-        <h1 css={title}>A Front-end Developer</h1>
-        <p css={description}>
-          Single landing page, content management system, custom code for object
-          oriented programming, projects of all sizes and durations.
-          <br />I write code.
-        </p>
+        <h1 css={title}>{strings.HomePage.Hero.title1}</h1>
+        <h1 css={title}>{strings.HomePage.Hero.title2}</h1>
+        <p css={description}>{strings.HomePage.Hero.description}</p>
 
         <Link
           href={routeLinks.projects({ lang })}

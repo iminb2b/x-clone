@@ -88,19 +88,19 @@ export const projectInfos: ProjectInfo[] = [
 
 const HomePageProjects: FC = () => {
   const {
-    state: { lang, darkmode },
+    state: {
+      lang,
+      darkmode,
+      strings: { MyProjects: projectsStrings },
+    },
   } = useContext(AppContext);
 
   return (
     <div css={container}>
       <div css={contentWrapper} data-aos="fade-up">
-        <p css={sectionService({ darkmode })}>PERSONAL WORK</p>
-        <h1 css={sectionTitle}>My Projects</h1>
-        <p css={sectionDescription}>
-          Single landing page, content management system, custom code for object
-          oriented programming, projects of all sizes and durations. I write
-          code.
-        </p>
+        <p css={sectionService({ darkmode })}>{projectsStrings.personalWork}</p>
+        <h1 css={sectionTitle}>{projectsStrings.title}</h1>
+        <p css={sectionDescription}>{projectsStrings.description}</p>
 
         <div css={projectsContainer}>
           {projectInfos.map((project) => (

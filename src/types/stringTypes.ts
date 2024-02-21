@@ -20,12 +20,13 @@ export type Strings = {
   //   };
   // };
 
-  // HomePage: {
-  //   Hero: {
-  //     title: string;
-  //     description: string;
-  //   };
-  // };
+  HomePage: {
+    Hero: {
+      title2: string;
+      title1: string;
+      description: string;
+    };
+  };
 
   // MyService: {
   //   title: string;
@@ -39,10 +40,17 @@ export type Strings = {
   //   description: string;
   // };
 
-  // MyProjects: {
-  //   title: string;
-  //   description: string;
-  // };
+  MyProjects: {
+    title: string;
+    description: string;
+    personalWork: string;
+  };
+
+  ContactPage: {
+    title: string;
+    description: string;
+    followOnSocialMedia: string;
+  };
 };
 
 // Via https://stackoverflow.com/a/47058976/7949868

@@ -1,4 +1,21 @@
 {
   "$schema": "./strings.schema.json",
-  "shared": {}
+  "shared": {},
+  "ContactPage": {
+    "description": "Feel free to contact me. I'm always eager to connect with fellow developers and potential clients!",
+    "followOnSocialMedia": "Follow me on Social Media",
+    "title": "Have a project in mind or just want to say hi?"
+  },
+  "HomePage": {
+    "Hero": {
+      "title1": "Hi I'm min.",
+      "title2": "A Front-end Developer",
+      "description": "Single landing page, content management system, custom code for object oriented programming, projects of all sizes and durations. I write code."
+    }
+  },
+  "MyProjects": {
+    "description": "Single landing page, content management system, custom code for object oriented programming, projects of all sizes and durations. I write code.",
+    "personalWork": "PERSONAL WORK",
+    "title": "My Projects"
+  }
 }
