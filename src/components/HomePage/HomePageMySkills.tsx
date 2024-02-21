@@ -7,7 +7,7 @@ import {
   sectionService,
   sectionTitle,
 } from "@/styles/generalStyles";
-import { LanguageContext } from "@/context/LanguageContext";
+import { AppContext } from "@/context/AppContext";
 import colors from "@/value/colors";
 import HomePageMySkillsList from "./HomePageMySkillsList";
 
@@ -32,7 +32,7 @@ const contentWrapper = css`
 `;
 
 const HomePageMySkills: FC = () => {
-  const { lang } = useContext(LanguageContext);
+  const { lang } = useContext(AppContext);
 
   return (
     <div css={container}>

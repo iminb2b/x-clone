@@ -8,7 +8,6 @@ import ViFlagIcon from "@/icons/ViFlagIcon";
 import CaFlagIcon from "@/icons/CaFlagIcon";
 
 const link = css`
-  color: ${colors.textPrimary};
   transition: all 0.3s ease;
   position: relative;
   display: flex;

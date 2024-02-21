@@ -3,7 +3,7 @@ import { css, keyframes } from "@emotion/react";
 import { contentContainer } from "@/styles/generalStyles";
 import Link from "next/link";
 import routeLinks from "@/routeLinks";
-import { LanguageContext } from "@/context/LanguageContext";
+import { AppContext } from "@/context/AppContext";
 import buttonStyles from "@/styles/buttonStyles";
 import code from "@/assets/images/code.png";
 import phone from "@/assets/images/phone.png";
@@ -77,7 +77,9 @@ const phoneIcon = css`
 `;
 
 const HomePageHero: FC = () => {
-  const { lang } = useContext(LanguageContext);
+  const {
+    state: { lang, darkmode },
+  } = useContext(AppContext);
 
   return (
     <div css={container}>
@@ -94,7 +96,7 @@ const HomePageHero: FC = () => {
 
         <Link
           href={routeLinks.projects({ lang })}
-          css={buttonStyles({ size: "large" })}
+          css={buttonStyles({ size: "large", darkmode })}
         >
           View Projects
         </Link>

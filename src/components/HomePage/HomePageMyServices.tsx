@@ -1,7 +1,7 @@
 import { FC, useContext } from "react";
 import { css } from "@emotion/react";
 import { contentContainer, sectionTitle } from "@/styles/generalStyles";
-import { LanguageContext } from "@/context/LanguageContext";
+import { AppContext } from "@/context/AppContext";
 import performanceImg from "@/assets/images/performance.png";
 import accessibilityImg from "@/assets/images/accessibility.png";
 import lockImg from "@/assets/images/lock.png";
@@ -145,7 +145,7 @@ const title = css`
 `;
 
 const HomePageMyServices: FC = () => {
-  const { lang } = useContext(LanguageContext);
+  const { lang } = useContext(AppContext);
 
   return (
     <div css={container}>

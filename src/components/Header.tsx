@@ -1,6 +1,6 @@
 import { FC, useContext, useEffect, useState } from "react";
 import { css } from "@emotion/react";
-import { LanguageContext } from "@/context/LanguageContext";
+import { AppContext } from "@/context/AppContext";
 import Logo from "./Logo";
 import { contentContainer } from "@/styles/generalStyles";
 import NavList from "./Nav/NavList";
@@ -8,7 +8,7 @@ import colors from "@/value/colors";
 import { useDialogStore } from "@ariakit/react";
 import NavMenuMobileButton from "./Nav/NavMenuMobileButton";
 import NavListMobile from "./Nav/NavListMobile";
-const container = ({ scrollNav }: { scrollNav: boolean }) => css`
+const container = css`
   width: 100%;
   position: sticky;
   top: 0;
@@ -17,10 +17,19 @@ const container = ({ scrollNav }: { scrollNav: boolean }) => css`
   display: flex;
   z-index: 10;
   justify-content: center;
+  transition: background-color 0.3s ease;
+`;
+
+const lightModeContainer = ({ scrollNav }: { scrollNav: boolean }) => css`
+  ${container}
   background-color: ${scrollNav ? colors.white : "transparent"};
   box-shadow: ${scrollNav ? "rgba(0, 0, 0, 0.1) 0px 4px 12px;" : "none"};
+`;
 
-  transition: all 0.3s ease;
+const darkModeContainer = ({ scrollNav }: { scrollNav: boolean }) => css`
+  ${container}
+  background-color: ${scrollNav ? "rgba(20,0,157,0.8)" : "transparent"};
+  box-shadow: ${scrollNav ? "rgba(0, 0, 0, 0.1) 0px 4px 12px;" : "none"};
 `;
 
 const contentWrapper = css`
@@ -32,7 +41,10 @@ const contentWrapper = css`
 `;
 
 const Header: FC = () => {
-  const strings = useContext(LanguageContext);
+  // const strings = useContext(AppContext);
+  const {
+    state: { darkmode },
+  } = useContext(AppContext);
 
   const [scrollNav, setScrollNav] = useState(false);
   const changeNav = () => {
@@ -53,9 +65,15 @@ const Header: FC = () => {
 
   return (
     <div
-      css={container({
-        scrollNav: mobileHeaderNavDialogIsMounted || scrollNav,
-      })}
+      css={
+        darkmode
+          ? darkModeContainer({
+              scrollNav: mobileHeaderNavDialogIsMounted || scrollNav,
+            })
+          : lightModeContainer({
+              scrollNav: mobileHeaderNavDialogIsMounted || scrollNav,
+            })
+      }
     >
       <div css={contentWrapper}>
         <Logo />

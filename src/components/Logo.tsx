@@ -6,7 +6,6 @@ import colors from "@/value/colors";
 const logo = css`
   font-size: 2rem;
   font-weight: 700;
-  color: ${colors.textPrimary};
   transition: all 0.3s ease;
 
   &:hover {

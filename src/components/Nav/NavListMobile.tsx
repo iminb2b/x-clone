@@ -1,6 +1,6 @@
 import { FC, useContext, useEffect } from "react";
 import { css } from "@emotion/react";
-import { LanguageContext } from "@/context/LanguageContext";
+import { AppContext } from "@/context/AppContext";
 import routeLinks from "@/routeLinks";
 import NavListItem from "./NavListItem";
 import { useRouter } from "next/router";
@@ -35,7 +35,7 @@ export type NavInfo = {
 const NavListMobile: FC<{
   dialogStore: DialogStore;
 }> = ({ dialogStore }) => {
-  const { lang, strings } = useContext(LanguageContext);
+  const { lang, strings } = useContext(AppContext);
 
   const router = useRouter();
 

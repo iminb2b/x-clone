@@ -10,7 +10,7 @@ import colors from "@/value/colors";
 import HomePageProjectsListItem from "./HomePageProjectsListItem";
 import Link from "next/link";
 import routeLinks from "@/routeLinks";
-import { LanguageContext } from "@/context/LanguageContext";
+import { AppContext } from "@/context/AppContext";
 import dolla from "@/assets/images/dolla.png";
 import portfolio from "@/assets/images/portfolio.png";
 import explorix from "@/assets/images/explorix.png";
@@ -71,7 +71,7 @@ export type ProjectInfo = {
 };
 
 const HomePageProjects: FC = () => {
-  const { lang } = useContext(LanguageContext);
+  const { lang } = useContext(AppContext);
 
   const projectInfos: ProjectInfo[] = [
     {

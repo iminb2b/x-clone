@@ -1,13 +1,12 @@
 import Link from "next/link";
-import { FC } from "react";
+import { FC, useContext } from "react";
 import { css } from "@emotion/react";
 import { NavInfo } from "./NavList";
 import colors from "@/value/colors";
-import { useRouter } from "next/router";
 import buttonStyles from "@/styles/buttonStyles";
+import { AppContext } from "@/context/AppContext";
 
-const link = css`
-  color: ${colors.textPrimary};
+const link = ({ darkmode }: { darkmode: boolean }) => css`
   transition: all 0.3s ease;
   position: relative;
 
@@ -17,15 +16,15 @@ const link = css`
       position: absolute;
       bottom: -4px;
       height: 2px;
-      background-color: ${colors.textPrimary};
+      background-color: ${darkmode ? colors.white : colors.textPrimary};
       width: 80%;
       left: 10%;
     }
   }
 `;
 
-const activeLink = css`
-  color: ${colors.purple};
+const activeLink = ({ darkmode }: { darkmode: boolean }) => css`
+  color: ${darkmode ? colors.green : colors.purple};
   position: relative;
 
   &::after {
@@ -33,7 +32,7 @@ const activeLink = css`
     position: absolute;
     bottom: -4px;
     height: 2px;
-    background-color: ${colors.purple};
+    background-color: ${darkmode ? colors.green : colors.purple};
     width: 80%;
     left: 10%;
   }
@@ -43,15 +42,22 @@ const NavListItem: FC<{
   item: NavInfo;
   isActive: boolean;
 }> = ({ item, isActive }) => {
+  const {
+    state: { darkmode },
+  } = useContext(AppContext);
+
   if (item.isButtonLink)
     return (
-      <Link href={item.url} css={buttonStyles}>
+      <Link href={item.url} css={buttonStyles({ darkmode })}>
         {item.name}
       </Link>
     );
 
   return (
-    <Link href={item.url} css={isActive ? activeLink : link}>
+    <Link
+      href={item.url}
+      css={isActive ? activeLink({ darkmode }) : link({ darkmode })}
+    >
       {item.name}
     </Link>
   );

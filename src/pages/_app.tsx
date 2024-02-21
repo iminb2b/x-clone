@@ -6,10 +6,7 @@ import stringsVi from "@/strings/stringsVi";
 import { useRouter } from "next/router";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import {
-  LanguageContext,
-  LanguageContextType,
-} from "@/context/LanguageContext";
+import { AppContextType, AppProvider } from "@/context/AppContext";
 import { useEffect } from "react";
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -25,26 +22,27 @@ export default function App({ Component, pageProps }: AppProps) {
 
   const localeStrings = localeInfo === "en" ? stringsEn : stringsVi;
 
-  const initialContextValue: LanguageContextType = {
+  const initialContextValue: AppContextType = {
     strings: localeStrings,
     lang: localeInfo === "vi" ? "vi" : "en",
+    darkmode: false,
   };
 
   if (pageProps.error) {
     return (
-      <LanguageContext.Provider value={initialContextValue}>
+      <AppProvider initialState={initialContextValue}>
         <Layout>
           <ErrorPageContent />
         </Layout>
-      </LanguageContext.Provider>
+      </AppProvider>
     );
   }
 
   return (
-    <LanguageContext.Provider value={initialContextValue}>
+    <AppProvider initialState={initialContextValue}>
       <Layout>
         <Component {...pageProps} />
       </Layout>
-    </LanguageContext.Provider>
+    </AppProvider>
   );
 }

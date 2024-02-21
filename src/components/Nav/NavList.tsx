@@ -1,11 +1,11 @@
 import { FC, useContext } from "react";
 import { css } from "@emotion/react";
-import { LanguageContext } from "@/context/LanguageContext";
+import { AppContext } from "@/context/AppContext";
 import routeLinks from "@/routeLinks";
 import NavListItem from "./NavListItem";
 import { useRouter } from "next/router";
 import LanguageLinks from "./LanguageLinks";
-import { useDialogStore } from "@ariakit/react";
+import DarkModeSettings from "./DarkModeSettings";
 
 const container = css`
   display: flex;
@@ -25,7 +25,9 @@ export type NavInfo = {
 };
 
 const NavList: FC = () => {
-  const { lang, strings } = useContext(LanguageContext);
+  const {
+    state: { lang },
+  } = useContext(AppContext);
 
   const router = useRouter();
 
@@ -58,6 +60,8 @@ const NavList: FC = () => {
       ))}
 
       <LanguageLinks lang={lang} />
+
+      <DarkModeSettings />
     </div>
   );
 };

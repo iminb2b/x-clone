@@ -1,13 +1,14 @@
-import { FC } from "react";
+import { FC, useContext } from "react";
 import { css } from "@emotion/react";
 import colors from "@/value/colors";
 import { ProjectInfo } from "./HomePageProjects";
 import Link from "next/link";
+import { AppContext } from "@/context/AppContext";
 
-const projectContainer = css`
+const projectContainer = ({ darkmode }: { darkmode: boolean }) => css`
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 2rem;
-  background-color: ${colors.white};
+  background-color: ${darkmode ? "rgba(20,0,157,0.3)" : colors.white};
   padding: 2rem;
   width: 100%;
   transition: all 0.3s ease-in-out;
@@ -23,10 +24,9 @@ const projectContainer = css`
 `;
 
 const image = css`
-  height: 20rem;
+  height: fit-content;
   border-radius: 1rem;
   width: 100%;
-  background-color: aliceblue;
 `;
 const infoContainer = css`
   display: flex;
@@ -40,9 +40,9 @@ const toolList = css`
   gap: 1rem;
   flex-wrap: wrap;
 `;
-const toolItem = css`
-  color: ${colors.purple};
-  border: 1px solid ${colors.purple};
+const toolItem = ({ darkmode }: { darkmode: boolean }) => css`
+  color: ${darkmode ? colors.green : colors.purple};
+  border: 1px solid ${darkmode ? colors.green : colors.purple};
   border-radius: 0.5rem;
   padding: 0.5rem;
 `;
@@ -56,13 +56,21 @@ const description = css`
 const HomePageProjectsListItem: FC<{ project: ProjectInfo }> = ({
   project,
 }) => {
+  const {
+    state: { darkmode },
+  } = useContext(AppContext);
+
   return (
-    <Link css={projectContainer} href={project.link} target="_blank">
+    <Link
+      css={projectContainer({ darkmode })}
+      href={project.link}
+      target="_blank"
+    >
       <img css={image} src={project.img} />
       <div css={infoContainer}>
         <ul css={toolList}>
           {project.tool.map((item, index) => (
-            <li key={index} css={toolItem}>
+            <li key={index} css={toolItem({ darkmode })}>
               {item}
             </li>
           ))}

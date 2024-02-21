@@ -7,7 +7,7 @@ import {
   sectionService,
   sectionTitle,
 } from "@/styles/generalStyles";
-import { LanguageContext } from "@/context/LanguageContext";
+import { AppContext } from "@/context/AppContext";
 import colors from "@/value/colors";
 import desktopIcon from "@/assets/images/desktopIcon.png";
 import HomePageExperienceList from "./HomePageExperienceList";
@@ -69,7 +69,7 @@ export type ExperienceInfo = {
 };
 
 const HomePageAboutMe: FC = () => {
-  const { lang } = useContext(LanguageContext);
+  const { lang } = useContext(AppContext);
 
   const educationList: ExperienceInfo[] = [
     {
