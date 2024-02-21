@@ -8,7 +8,7 @@ const nextConfig = {
     {
       source: "/",
       destination: "/en",
-      statusCode: 301
+      permanent: true
     }
 
   ]
