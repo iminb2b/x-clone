@@ -9,6 +9,11 @@ const nextConfig = {
       source: "/",
       destination: "/en",
       permanent: true
+    },
+    {
+      source: "",
+      destination: "/en",
+      permanent: true
     }
 
   ]
