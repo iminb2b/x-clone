@@ -8,7 +8,6 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { AppContextType, AppProvider } from "@/context/AppContext";
 import { useEffect } from "react";
-import { redirect } from "next/navigation";
 import routeLinks from "@/routeLinks";
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -30,7 +29,7 @@ export default function App({ Component, pageProps }: AppProps) {
     });
 
     if (localeInfo !== "en" && localeInfo !== "vi") {
-      redirect(routeLinks.homePage({ lang: "en" }));
+      router.push(routeLinks.homePage({ lang: "en" }));
     }
   }, []);
 
