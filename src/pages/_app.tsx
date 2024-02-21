@@ -27,10 +27,6 @@ export default function App({ Component, pageProps }: AppProps) {
     AOS.init({
       duration: 600,
     });
-
-    if (localeInfo !== "en" && localeInfo !== "vi") {
-      router.push(routeLinks.homePage({ lang: "en" }));
-    }
   }, []);
 
   if (pageProps.error) {
