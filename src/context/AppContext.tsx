@@ -22,6 +22,7 @@ const appReducer = (state: AppState, action: AppAction) => {
   const { type, payload } = action;
   switch (type) {
     case "enableDarkMode":
+      localStorage.setItem("darkmode", payload ? "true" : "false");
       return {
         ...state,
         darkmode: payload,

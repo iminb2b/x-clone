@@ -6,11 +6,7 @@ import PageMeta from "@/components/PageMeta";
 const ProjectsPage: NextPage = () => {
   return (
     <PageContainer>
-      <PageMeta
-        title="Min - Projects Page"
-        description={"Nhung Nguyen"}
-        image={null}
-      />
+      <PageMeta title="Min - Projects Page" description={"Nhung Nguyen"} />
       <HomePageProjects />
     </PageContainer>
   );

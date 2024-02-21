@@ -1,17 +1,20 @@
-import { FC } from "react";
+import { FC, useContext } from "react";
 import { css } from "@emotion/react";
 import { SkillInfo } from "./HomePageMySkillsList";
 import colors from "@/value/colors";
+import { AppContext } from "@/context/AppContext";
 
-const container = css`
+const container = ({ darkmode }: { darkmode: boolean }) => css`
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 2rem 0;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 2rem;
   align-items: center;
-  background-color: ${colors.white};
+  background-color: ${darkmode ? "rgba(255,255,255,0.6)" : colors.white};
+  box-shadow: ${darkmode
+    ? "rgba(255, 255, 255, 0.24) 0px 3px 8px"
+    : "rgba(0, 0, 0, 0.24) 0px 3px 8px"};
   text-align: center;
   gap: 2rem;
 `;
@@ -22,17 +25,21 @@ const image = css`
   width: fit-content;
 `;
 
-const title = css`
-  color: ${colors.purple};
+const title = ({ darkmode }: { darkmode: boolean }) => css`
+  color: ${darkmode ? colors.white : colors.purple};
 `;
 
 const HomePageMySkillsListItem: FC<{ skill: SkillInfo }> = ({
   skill: { name, img },
 }) => {
+  const {
+    state: { darkmode },
+  } = useContext(AppContext);
+
   return (
-    <div css={container}>
+    <div css={container({ darkmode })}>
       <img src={img} css={image} />
-      <h2 css={title}>{name}</h2>
+      <h2 css={title({ darkmode })}>{name}</h2>
     </div>
   );
 };

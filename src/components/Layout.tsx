@@ -1,5 +1,5 @@
 import { css, Global } from "@emotion/react";
-import { FC, memo, ReactNode, useContext } from "react";
+import { FC, memo, ReactNode, useContext, useEffect } from "react";
 import Header from "./Header";
 import globalStyles from "@/styles/globalStyles";
 import { cursorStyle, outerCursorStyle } from "@/styles/cursorStyles";
@@ -31,7 +31,14 @@ const Layout: FC<{
 }> = memo(({ children }) => {
   const {
     state: { darkmode },
+    dispatch,
   } = useContext(AppContext);
+
+  useEffect(() => {
+    const darkMode = localStorage.getItem("darkmode") === "true";
+
+    dispatch({ type: "enableDarkMode", payload: darkMode });
+  }, []);
 
   return (
     <div css={pageContainer({ darkmode })}>

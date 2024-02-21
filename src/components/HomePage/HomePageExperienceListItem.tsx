@@ -1,9 +1,10 @@
-import { FC } from "react";
+import { FC, useContext } from "react";
 import { css } from "@emotion/react";
 import colors from "@/value/colors";
 import { ExperienceInfo } from "./HomePageAboutMe";
+import { AppContext } from "@/context/AppContext";
 
-const jobItem = css`
+const jobItem = ({ darkmode }: { darkmode: boolean }) => css`
   border-left: 2px solid ${colors.textPrimary};
   padding: 0 1rem 1rem;
   display: flex;
@@ -18,7 +19,7 @@ const jobItem = css`
     left: -7px;
     width: 14px;
     border-radius: 50%;
-    background-color: ${colors.purple};
+    background-color: ${darkmode ? colors.green : colors.purple};
     height: 14px;
   }
 
@@ -27,10 +28,10 @@ const jobItem = css`
   }
 `;
 
-const jobTitle = css`
+const jobTitle = ({ darkmode }: { darkmode: boolean }) => css`
   font-size: 1.125rem;
 
-  color: ${colors.purple};
+  color: ${darkmode ? colors.green : colors.purple};
 `;
 const list = css`
   padding: 0.5rem 1.5rem;
@@ -46,9 +47,13 @@ const descriptionContainer = css`
 const HomePageExperienceListItem: FC<{
   item: ExperienceInfo;
 }> = ({ item: { name, date, achievements, relevantCourse, description } }) => {
+  const {
+    state: { darkmode },
+  } = useContext(AppContext);
+
   return (
-    <div css={jobItem}>
-      <h4 css={jobTitle}>{name}</h4>
+    <div css={jobItem({ darkmode })}>
+      <h4 css={jobTitle({ darkmode })}>{name}</h4>
       <b>{date}</b>
       {relevantCourse && (
         <p>

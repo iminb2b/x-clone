@@ -9,7 +9,6 @@ const AboutPage: NextPage = () => {
       <PageMeta
         title="Min - About Me"
         description={"Information about Nhung Nguyen"}
-        image={null}
       />
       <HomePageAboutMe />
     </PageContainer>

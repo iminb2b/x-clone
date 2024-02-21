@@ -4,12 +4,15 @@ import colors from "@/value/colors";
 import { ProjectInfo } from "./HomePageProjects";
 import Link from "next/link";
 import { AppContext } from "@/context/AppContext";
+import routeLinks from "@/routeLinks";
 
 const projectContainer = ({ darkmode }: { darkmode: boolean }) => css`
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: ${darkmode
+    ? "rgba(255, 255, 255, 0.24) 0px 5px 8px"
+    : "rgba(0, 0, 0, 0.24) 0px 3px 8px"};
   border-radius: 2rem;
   background-color: ${darkmode ? "rgba(20,0,157,0.3)" : colors.white};
-  padding: 2rem;
+  padding: 1rem;
   width: 100%;
   transition: all 0.3s ease-in-out;
 
@@ -47,27 +50,24 @@ const toolItem = ({ darkmode }: { darkmode: boolean }) => css`
   padding: 0.5rem;
 `;
 const title = css`
-  font-size: clamp(1.5rem, 2vw, 3rem);
-`;
-const description = css`
-  line-height: 1.4;
+  font-size: clamp(1.5rem, 3vw, 3rem);
 `;
 
 const HomePageProjectsListItem: FC<{ project: ProjectInfo }> = ({
   project,
 }) => {
   const {
-    state: { darkmode },
+    state: { darkmode, lang },
   } = useContext(AppContext);
 
   return (
     <Link
       css={projectContainer({ darkmode })}
-      href={project.link}
-      target="_blank"
+      href={routeLinks.project({ lang, slug: project.slug })}
     >
       <img css={image} src={project.img} />
       <div css={infoContainer}>
+        <h1 css={title}>{project.title}</h1>
         <ul css={toolList}>
           {project.tool.map((item, index) => (
             <li key={index} css={toolItem({ darkmode })}>
@@ -75,8 +75,6 @@ const HomePageProjectsListItem: FC<{ project: ProjectInfo }> = ({
             </li>
           ))}
         </ul>
-        <h1 css={title}>{project.title}</h1>
-        <p css={description}>{project.description}</p>
       </div>
     </Link>
   );

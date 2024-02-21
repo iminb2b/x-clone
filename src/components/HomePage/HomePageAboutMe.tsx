@@ -44,18 +44,18 @@ const infoContainer = css`
   }
 `;
 
-const icon = css`
-  color: ${colors.purple};
+const icon = ({ darkmode }: { darkmode: boolean }) => css`
+  color: ${darkmode ? colors.green : colors.purple};
   font-size: 1.25rem;
 `;
 
-const nameText = css`
+const nameText = ({ darkmode }: { darkmode: boolean }) => css`
   font-size: clamp(1.5rem, 3vw, 3rem);
-  color: ${colors.purple};
+  color: ${darkmode ? colors.green : colors.purple};
 `;
 
-const downloadLink = css`
-  color: ${colors.purple};
+const downloadLink = ({ darkmode }: { darkmode: boolean }) => css`
+  color: ${darkmode ? colors.green : colors.purple};
   align-items: center;
   display: flex;
 `;
@@ -69,7 +69,9 @@ export type ExperienceInfo = {
 };
 
 const HomePageAboutMe: FC = () => {
-  const { lang } = useContext(AppContext);
+  const {
+    state: { lang, darkmode },
+  } = useContext(AppContext);
 
   const educationList: ExperienceInfo[] = [
     {
@@ -115,8 +117,8 @@ const HomePageAboutMe: FC = () => {
 
   return (
     <div css={container}>
-      <div css={boxWrapper} data-aos="fade-up">
-        <p css={sectionService}>SERVICE</p>
+      <div css={boxWrapper({ darkmode })} data-aos="fade-up">
+        <p css={sectionService({ darkmode })}>PROFILE</p>
         <h1 css={sectionTitle}>About Me</h1>
         <p css={sectionDescription}>
           Using the right tools help web sites come together faster and easier.
@@ -125,7 +127,7 @@ const HomePageAboutMe: FC = () => {
         <div css={statementContainer}>
           <img src={desktopIcon.src} css={desktop} />
           <div css={infoContainer}>
-            <h2 css={nameText}>Hi! I am Min.</h2>
+            <h2 css={nameText({ darkmode })}>Hi! I am Min.</h2>
             <p>
               I'm a Toronto-based designer who has a passion for UI/UX Design
               and Graphic Design. My mission is simple: to create designs that
@@ -141,8 +143,8 @@ const HomePageAboutMe: FC = () => {
               download="Nhung Nguyen - Front-end Developer Resume"
               target="_blank"
             >
-              <div css={downloadLink}>
-                <FileDownloadIcon css={icon} /> Download My Resume
+              <div css={downloadLink({ darkmode })}>
+                <FileDownloadIcon css={icon({ darkmode })} /> Download My Resume
               </div>
             </a>
           </div>

@@ -32,15 +32,14 @@ const contentWrapper = css`
 `;
 
 const HomePageMySkills: FC = () => {
-  const { lang } = useContext(AppContext);
+  const {
+    state: { lang, darkmode },
+  } = useContext(AppContext);
 
   return (
     <div css={container}>
-      <div
-        css={contentWrapper}
-        // data-aos="fade-up"
-      >
-        <p css={sectionService}>SERVICE</p>
+      <div css={contentWrapper} data-aos="fade-up">
+        <p css={sectionService({ darkmode })}>TOOLS</p>
         <h1 css={sectionTitle}>My Skills</h1>
         <p css={sectionDescription}>
           Using the right tools help web sites come together faster and easier.

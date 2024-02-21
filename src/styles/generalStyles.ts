@@ -6,8 +6,9 @@ export const contentContainer = css`
   padding: 1rem;
 `;
 
-export const sectionService = css`
+export const sectionService = ({ darkmode }: { darkmode: boolean }) => css`
   font-size: clamp(1rem, 2vw, 1.375rem);
+  color: ${darkmode ? colors.green : colors.textPrimary};
 `;
 
 export const sectionTitle = css`
@@ -23,10 +24,10 @@ export const sectionDescription = css`
   line-height: 1.4;
 `;
 
-export const boxWrapper = css`
+export const boxWrapper = ({ darkmode }: { darkmode: boolean }) => css`
   position: relative;
 
-  background-color: ${colors.white};
+  background-color: ${darkmode ? "rgba(20,0,157,0.3)" : colors.white};
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 2rem;
   display: flex;

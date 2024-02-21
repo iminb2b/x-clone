@@ -10,11 +10,7 @@ import HomePageAboutMe from "@/components/HomePage/HomePageAboutMe";
 const HomePage: NextPage = () => {
   return (
     <PageContainer>
-      <PageMeta
-        title="Min - Home Page"
-        description={"Nhung Nguyen"}
-        image={null}
-      />
+      <PageMeta title="Min - Home Page" description={"Nhung Nguyen"} />
       <HomePageHero />
       <HomePageMyServices />
       <HomePageMySkills />

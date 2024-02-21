@@ -4,9 +4,8 @@ import { FC, memo } from "react";
 
 const PageMeta: FC<{
   description: string | null;
-  image: StaticImageData | null;
   title: string | null;
-}> = memo(({ description, image, title }) => {
+}> = memo(({ description, title }) => {
   return (
     <Head>
       <title>{title}</title>
