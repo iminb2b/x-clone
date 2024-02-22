@@ -37,4 +37,11 @@ export const boxWrapper = ({ darkmode }: { darkmode: boolean }) => css`
   width: 100%;
   padding: 3rem 0;
   gap: 1rem;
+
+  @media screen and (max-width: 688px) {
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+  }
 `;

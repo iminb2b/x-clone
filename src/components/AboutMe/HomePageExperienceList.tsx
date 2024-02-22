@@ -8,7 +8,7 @@ const educationContainer = css`
   padding: 1rem 7rem;
 
   @media screen and (max-width: 720px) {
-    padding: 2rem;
+    padding: 1rem;
   }
 `;
 

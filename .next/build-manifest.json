@@ -27,10 +27,20 @@
       "static/chunks/main.js",
       "static/chunks/pages/en.js"
     ],
-    "/en/projects/[slug]": [
+    "/en/about": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/en/projects/[slug].js"
+      "static/chunks/pages/en/about.js"
+    ],
+    "/en/contact": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/en/contact.js"
+    ],
+    "/vi": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/vi.js"
     ]
   },
   "ampFirstPages": []

@@ -27,6 +27,10 @@ const statementContainer = css`
   @media screen and (max-width: 960px) {
     flex-direction: column;
   }
+
+  @media screen and (max-width: 688px) {
+    padding: 1rem;
+  }
 `;
 const desktop = css`
   width: 100%;
@@ -44,7 +48,7 @@ const infoContainer = css`
   line-height: 1.6;
 
   @media screen and (max-width: 960px) {
-    padding: 2rem;
+    padding: 1rem;
   }
 
   @media screen and (max-width: 688px) {

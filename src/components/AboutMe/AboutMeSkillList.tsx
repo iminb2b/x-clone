@@ -13,6 +13,10 @@ const list = css`
   padding: 0.5rem 1.5rem;
   list-style-type: circle;
   line-height: 1.6;
+
+  @media screen and (max-width: 688px) {
+    padding: 0.5rem 0;
+  }
 `;
 
 const descriptionContainer = css`
@@ -25,8 +29,8 @@ const educationContainer = css`
   width: 100%;
   padding: 1rem 7rem;
 
-  @media screen and (max-width: 720px) {
-    padding: 2rem;
+  @media screen and (max-width: 688px) {
+    padding: 1rem;
   }
 `;
 

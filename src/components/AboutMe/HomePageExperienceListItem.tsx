@@ -26,6 +26,15 @@ const jobItem = ({ darkmode }: { darkmode: boolean }) => css`
   &:last-of-type {
     border: none;
   }
+
+  @media screen and (max-width: 688px) {
+    padding: 0.5rem 0;
+    border: none;
+
+    &::after {
+      display: none;
+    }
+  }
 `;
 
 const jobTitle = ({ darkmode }: { darkmode: boolean }) => css`
@@ -38,6 +47,10 @@ const list = css`
   padding: 0.5rem 1.5rem;
   list-style-type: circle;
   line-height: 1.6;
+
+  @media screen and (max-width: 688px) {
+    padding: 0.5rem 1rem;
+  }
 `;
 
 const descriptionContainer = css`
