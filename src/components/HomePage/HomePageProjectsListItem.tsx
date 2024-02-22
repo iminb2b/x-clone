@@ -27,30 +27,16 @@ const projectContainer = ({ darkmode }: { darkmode: boolean }) => css`
 `;
 
 const image = css`
-  height: fit-content;
+  height: auto;
   border-radius: 1rem;
   width: 100%;
 `;
-const infoContainer = css`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding: 1rem 0;
-`;
-const toolList = css`
-  list-style-type: none;
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-`;
+
 const toolItem = ({ darkmode }: { darkmode: boolean }) => css`
   color: ${darkmode ? colors.green : colors.purple};
   border: 1px solid ${darkmode ? colors.green : colors.purple};
   border-radius: 0.5rem;
   padding: 0.5rem;
-`;
-const title = css`
-  font-size: clamp(1.5rem, 3vw, 3rem);
 `;
 
 const HomePageProjectsListItem: FC<{ project: ProjectInfo }> = ({

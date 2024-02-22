@@ -29,6 +29,10 @@ const contentWrapper = css`
 
   padding: 3rem 0;
   gap: 1rem;
+
+  @media screen and (max-width: 688px) {
+    padding: 1rem 0;
+  }
 `;
 
 const HomePageMySkills: FC = () => {

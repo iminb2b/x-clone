@@ -17,12 +17,23 @@ const container = ({ darkmode }: { darkmode: boolean }) => css`
     : "rgba(0, 0, 0, 0.24) 0px 3px 8px"};
   text-align: center;
   gap: 2rem;
+
+  @media screen and (max-width: 720px) {
+    box-shadow: none;
+    border: none;
+    background: transparent;
+  }
 `;
 
 const image = css`
   height: 4.5rem;
   min-height: 4.5rem;
   width: fit-content;
+
+  @media screen and (max-width: 720px) {
+    height: 2.5rem;
+    min-height: 2.5rem;
+  }
 `;
 
 const title = ({ darkmode }: { darkmode: boolean }) => css`
