@@ -30,6 +30,10 @@ const contentWrapper = css`
   width: 100%;
   gap: 2rem;
   padding: 5rem 0;
+
+  @media screen and (max-width: 688px) {
+    padding: 1rem 0;
+  }
 `;
 
 const projectsContainer = css`

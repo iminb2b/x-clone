@@ -32,7 +32,7 @@ const image = css`
   border-radius: 1rem;
   width: 100%;
 
-  @media screen and (max-width: 688px) {
+  @media screen and (max-width: 450px) {
     max-height: 13.375rem;
   }
 `;
