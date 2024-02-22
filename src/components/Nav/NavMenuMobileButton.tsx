@@ -7,7 +7,7 @@ import colors from "@/value/colors";
 const iconTextColumn = css`
   background-color: transparent;
   border: none;
-  @media screen and (min-width: 688px) {
+  @media screen and (min-width: 720px) {
     display: none;
   }
 `;

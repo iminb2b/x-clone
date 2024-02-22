@@ -1,14 +1,14 @@
 import { FC } from "react";
 import { css } from "@emotion/react";
 
-import htmlIcon from "@/assets/images/html5.png";
-import reactIcon from "@/assets/images/react.png";
-import cssIcon from "@/assets/images/css.png";
-import nextjsIcon from "@/assets/images/nextjs.png";
-import jsIcon from "@/assets/images/js.png";
-import graphQlIcon from "@/assets/images/graphql.png";
-import emotionIcon from "@/assets/images/emotion.png";
-import styledComponentsIcon from "@/assets/images/styledcomponent.png";
+import htmlIcon from "@/assets/images/tools/html5.png";
+import reactIcon from "@/assets/images/tools/react.png";
+import cssIcon from "@/assets/images/tools/css.png";
+import nextjsIcon from "@/assets/images/tools/nextjs.png";
+import jsIcon from "@/assets/images/tools/js.png";
+import graphQlIcon from "@/assets/images/tools/graphql.png";
+import emotionIcon from "@/assets/images/tools/emotion.png";
+import styledComponentsIcon from "@/assets/images/tools/styledcomponent.png";
 import HomePageMySkillsListItem from "./HomePageMySkillsListItem";
 
 const container = css`

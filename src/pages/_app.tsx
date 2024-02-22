@@ -15,7 +15,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   const localeInfo = router.asPath.slice(1, 3);
 
-  const localeStrings = localeInfo === "en" ? stringsEn : stringsVi;
+  const localeStrings = localeInfo === "vi" ? stringsVi : stringsEn;
 
   const initialContextValue: AppContextType = {
     strings: localeStrings,

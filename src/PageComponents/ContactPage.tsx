@@ -26,16 +26,30 @@ const contentWrapper = css`
   align-items: center;
   padding-bottom: 5rem;
   width: 100%;
+
+  @media screen and (max-width: 960px) {
+    flex-direction: column-reverse;
+    padding: 5rem 2rem;
+    justify-content: flex-end;
+  }
 `;
 
 const infoContainer = css`
   width: 60%;
   display: flex;
   flex-direction: column;
+
+  @media screen and (max-width: 960px) {
+    width: 100%;
+  }
 `;
 const message = css`
   width: 40%;
   height: fit-content;
+
+  @media screen and (max-width: 960px) {
+    display: none;
+  }
 `;
 const title = css`
   font-size: clamp(1.5rem, 3vw, 4rem);
@@ -97,6 +111,10 @@ const mediaContainer = ({ darkmode }: { darkmode: boolean }) => css`
   display: flex;
 
   max-width: 80%;
+
+  @media screen and (max-width: 960px) {
+    max-width: 100%;
+  }
 `;
 const line = ({ darkmode }: { darkmode: boolean }) => css`
   width: 5rem;

@@ -13,7 +13,7 @@ const container = css`
   height: 100%;
   align-items: center;
 
-  @media screen and (max-width: 688px) {
+  @media screen and (max-width: 720px) {
     display: none;
   }
 `;

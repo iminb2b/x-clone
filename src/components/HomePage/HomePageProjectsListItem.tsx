@@ -1,10 +1,10 @@
 import { FC, useContext } from "react";
 import { css } from "@emotion/react";
 import colors from "@/value/colors";
-import { ProjectInfo } from "./HomePageProjects";
 import Link from "next/link";
 import { AppContext } from "@/context/AppContext";
 import routeLinks from "@/routeLinks";
+import { ProjectInfo } from "@/value/projectsInfo";
 
 const projectContainer = ({ darkmode }: { darkmode: boolean }) => css`
   box-shadow: ${darkmode
@@ -66,16 +66,6 @@ const HomePageProjectsListItem: FC<{ project: ProjectInfo }> = ({
       href={routeLinks.project({ lang, slug: project.slug })}
     >
       <img css={image} src={project.img} />
-      <div css={infoContainer}>
-        <h1 css={title}>{project.title}</h1>
-        <ul css={toolList}>
-          {project.tool.map((item, index) => (
-            <li key={index} css={toolItem({ darkmode })}>
-              {item}
-            </li>
-          ))}
-        </ul>
-      </div>
     </Link>
   );
 };

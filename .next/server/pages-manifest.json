@@ -2,9 +2,9 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/vi": "pages/vi.js",
   "/en": "pages/en.js",
+  "/vi/contact": "pages/vi/contact.js",
   "/vi/projects": "pages/vi/projects.js",
-  "/vi/about": "pages/vi/about.js",
-  "/en/about": "pages/en/about.js"
+  "/vi/projects/[slug]": "pages/vi/projects/[slug].js",
+  "/vi/about": "pages/vi/about.js"
 }

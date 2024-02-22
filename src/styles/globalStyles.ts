@@ -97,8 +97,7 @@ const globalStyles = css`
   }
 
   body {
-    color: rgba(0, 0, 0, 0.87);
-    background: "#fff";
+    background-image: url("/images/bgImg.png");
   }
 
   a {

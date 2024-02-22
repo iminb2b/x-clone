@@ -4,11 +4,10 @@ import { AppContext } from "@/context/AppContext";
 import Logo from "./Logo";
 import { contentContainer } from "@/styles/generalStyles";
 import NavList from "./Nav/NavList";
-import colors from "@/value/colors";
 import { useDialogStore } from "@ariakit/react";
 import NavMenuMobileButton from "./Nav/NavMenuMobileButton";
 import NavListMobile from "./Nav/NavListMobile";
-const container = css`
+const container = ({ scrollNav }: { scrollNav: boolean }) => css`
   width: 100%;
   position: sticky;
   top: 0;
@@ -17,27 +16,42 @@ const container = css`
   display: flex;
   z-index: 10;
   justify-content: center;
-  transition: background-color 0.3s ease;
-`;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0;
 
-const lightModeContainer = ({ scrollNav }: { scrollNav: boolean }) => css`
-  ${container}
-  background-color: ${scrollNav ? "rgba(255, 255, 255, 0.9)" : "transparent"};
-  box-shadow: ${scrollNav ? "rgba(0, 0, 0, 0.1) 0px 4px 12px;" : "none"};
-`;
+  width: ${scrollNav ? "70%" : "100%"};
+  max-width: ${scrollNav ? "1000px" : "100%"};
 
-const darkModeContainer = ({ scrollNav }: { scrollNav: boolean }) => css`
-  ${container}
-  background-color: ${scrollNav ? "rgba(20,0,157,0.8)" : "transparent"};
-  box-shadow: ${scrollNav ? "rgba(0, 0, 0, 0.1) 0px 4px 12px;" : "none"};
+  @media screen and (max-width: 720px) {
+    width: 90%;
+  }
 `;
 
 const contentWrapper = css`
   ${contentContainer}
 
   width: 100%;
+  transition: all 0.3s ease;
   display: flex;
   justify-content: space-between;
+
+  border-radius: 3rem;
+`;
+
+const lightModeContainer = ({ scrollNav }: { scrollNav: boolean }) => css`
+  ${contentWrapper}
+
+  padding: ${scrollNav ? "0.5rem 2rem" : "0.5rem 1rem"};
+  background-color: ${scrollNav ? "rgba(255, 255, 255, 0.95)" : "transparent"};
+  box-shadow: ${scrollNav ? "rgba(0, 0, 0, 0.1) 0px 4px 12px;" : "none"};
+`;
+
+const darkModeContainer = ({ scrollNav }: { scrollNav: boolean }) => css`
+  ${contentWrapper}
+  padding: ${scrollNav ? "0.5rem 2rem" : "0.5rem 1rem"};
+
+  background-color: ${scrollNav ? "rgba(20,0,157,0.8)" : "transparent"};
+  box-shadow: ${scrollNav ? "rgba(0, 0, 0, 0.1) 0px 4px 12px;" : "none"};
 `;
 
 const Header: FC = () => {
@@ -65,17 +79,21 @@ const Header: FC = () => {
 
   return (
     <div
-      css={
-        darkmode
-          ? darkModeContainer({
-              scrollNav: mobileHeaderNavDialogIsMounted || scrollNav,
-            })
-          : lightModeContainer({
-              scrollNav: mobileHeaderNavDialogIsMounted || scrollNav,
-            })
-      }
+      css={container({
+        scrollNav: mobileHeaderNavDialogIsMounted || scrollNav,
+      })}
     >
-      <div css={contentWrapper}>
+      <div
+        css={
+          darkmode
+            ? darkModeContainer({
+                scrollNav: mobileHeaderNavDialogIsMounted || scrollNav,
+              })
+            : lightModeContainer({
+                scrollNav: mobileHeaderNavDialogIsMounted || scrollNav,
+              })
+        }
+      >
         <Logo />
         <NavList />
 

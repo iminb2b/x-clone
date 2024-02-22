@@ -1,7 +1,7 @@
 import PageContainer from "@/components/PageContent";
 import { NextPage } from "next";
 import PageMeta from "@/components/PageMeta";
-import HomePageAboutMe from "@/components/HomePage/HomePageAboutMe";
+import HomePageAboutMe from "@/components/AboutMe/AboutMe";
 
 const AboutPage: NextPage = () => {
   return (

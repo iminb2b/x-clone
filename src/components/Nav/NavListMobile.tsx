@@ -7,23 +7,29 @@ import { useRouter } from "next/router";
 import LanguageLinks from "./LanguageLinks";
 import { Dialog, DialogStore } from "@ariakit/react/dialog";
 import colors from "@/value/colors";
+import DarkModeSettings from "./DarkModeSettings";
 
-const container = css`
+const container = ({ darkmode }: { darkmode: boolean }) => css`
   display: flex;
-  top: 4rem;
-  left: "-1rem";
-  width: 100%;
-  background-color: ${colors.white};
-  position: absolute;
-  height: calc(100vh - 4rem);
-  min-height: calc(100vh - 4rem);
+  top: 4.5rem;
+  left: 5%;
+  border-radius: 2rem;
+  background-color: ${darkmode ? colors.blue : colors.white};
   position: fixed;
   z-index: 10;
-  display: flex;
   flex-direction: column;
   gap: 1.5rem;
   align-items: center;
-  padding: 3rem;
+  padding: 7rem 3rem;
+  box-shadow: ${darkmode
+    ? "rgba(255, 255, 255, 0.1) 0px 4px 12px;"
+    : "rgba(0, 0, 0, 0.1) 0px 4px 12px;"};
+
+  width: 90%;
+
+  @media screen and (min-width: 720px) {
+    display: none;
+  }
 `;
 
 export type NavInfo = {
@@ -36,7 +42,7 @@ const NavListMobile: FC<{
   dialogStore: DialogStore;
 }> = ({ dialogStore }) => {
   const {
-    state: { lang, strings },
+    state: { lang, darkmode },
   } = useContext(AppContext);
 
   const router = useRouter();
@@ -72,7 +78,7 @@ const NavListMobile: FC<{
   }, [dialogStore, router.events]);
 
   return (
-    <Dialog css={container} modal store={dialogStore}>
+    <Dialog css={container({ darkmode })} modal store={dialogStore}>
       {navListInfo.map((item, index) => (
         <NavListItem
           item={item}
@@ -82,6 +88,7 @@ const NavListMobile: FC<{
       ))}
 
       <LanguageLinks lang={lang} />
+      <DarkModeSettings />
     </Dialog>
   );
 };

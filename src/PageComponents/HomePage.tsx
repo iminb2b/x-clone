@@ -5,7 +5,7 @@ import { NextPage } from "next";
 import PageMeta from "@/components/PageMeta";
 import HomePageMySkills from "@/components/HomePage/HomePageMySkills";
 import HomePageMyServices from "@/components/HomePage/HomePageMyServices";
-import HomePageAboutMe from "@/components/HomePage/HomePageAboutMe";
+import HomePageAboutMe from "@/components/AboutMe/AboutMe";
 
 const HomePage: NextPage = () => {
   return (
