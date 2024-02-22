@@ -27,16 +27,10 @@ const projectContainer = ({ darkmode }: { darkmode: boolean }) => css`
 `;
 
 const image = css`
-  height: auto;
+  min-height: min-content;
+  max-height: max-content;
   border-radius: 1rem;
   width: 100%;
-`;
-
-const toolItem = ({ darkmode }: { darkmode: boolean }) => css`
-  color: ${darkmode ? colors.green : colors.purple};
-  border: 1px solid ${darkmode ? colors.green : colors.purple};
-  border-radius: 0.5rem;
-  padding: 0.5rem;
 `;
 
 const HomePageProjectsListItem: FC<{ project: ProjectInfo }> = ({

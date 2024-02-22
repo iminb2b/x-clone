@@ -8,7 +8,6 @@ import {
   sectionTitle,
 } from "@/styles/generalStyles";
 import { AppContext } from "@/context/AppContext";
-import colors from "@/value/colors";
 import HomePageMySkillsList from "./HomePageMySkillsList";
 
 const container = css`
