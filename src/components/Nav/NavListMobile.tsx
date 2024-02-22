@@ -26,6 +26,7 @@ const container = ({ darkmode }: { darkmode: boolean }) => css`
     : "rgba(0, 0, 0, 0.1) 0px 4px 12px;"};
 
   width: 90%;
+  color: ${darkmode ? colors.white : colors.textPrimary};
 
   @media screen and (min-width: 720px) {
     display: none;

@@ -3,8 +3,6 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/en": "pages/en.js",
-  "/vi/contact": "pages/vi/contact.js",
-  "/vi/projects": "pages/vi/projects.js",
   "/vi/projects/[slug]": "pages/vi/projects/[slug].js",
-  "/vi/about": "pages/vi/about.js"
+  "/vi/projects": "pages/vi/projects.js"
 }

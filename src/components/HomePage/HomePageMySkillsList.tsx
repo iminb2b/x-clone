@@ -23,7 +23,7 @@ const container = css`
   }
 
   @media screen and (max-width: 688px) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 `;
 
