@@ -31,6 +31,10 @@ const image = css`
   max-height: max-content;
   border-radius: 1rem;
   width: 100%;
+
+  @media screen and (max-width: 688px) {
+    max-height: 13.375rem;
+  }
 `;
 
 const HomePageProjectsListItem: FC<{ project: ProjectInfo }> = ({

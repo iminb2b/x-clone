@@ -25,6 +25,8 @@ const container = css`
   @media screen and (max-width: 688px) {
     grid-template-columns: 1fr 1fr;
     padding: 1rem;
+    max-width: 100vw;
+    overflow: hidden;
   }
 `;
 
