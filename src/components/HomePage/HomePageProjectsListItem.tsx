@@ -15,7 +15,7 @@ const projectContainer = ({ darkmode }: { darkmode: boolean }) => css`
   padding: 0;
   width: 100%;
   height: auto;
-  background-color: red;
+  background-color: transparent;
   transition: all 0.3s ease-in-out;
 
   &:hover {
