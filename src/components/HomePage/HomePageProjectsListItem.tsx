@@ -12,7 +12,7 @@ const projectContainer = ({ darkmode }: { darkmode: boolean }) => css`
     : "rgba(0, 0, 0, 0.24) 0px 3px 8px"};
   border-radius: 2rem;
   background-color: ${darkmode ? "rgba(20,0,157,0.3)" : colors.white};
-  padding: 1rem;
+  /* padding: 1rem; */
   width: 100%;
   transition: all 0.3s ease-in-out;
 
@@ -27,14 +27,14 @@ const projectContainer = ({ darkmode }: { darkmode: boolean }) => css`
 `;
 
 const image = css`
-  min-height: min-content;
-  max-height: max-content;
-  border-radius: 1rem;
+  border-radius: 2rem;
   width: 100%;
+  height: auto;
+  aspect-ratio: 3/2;
 
-  @media screen and (max-width: 450px) {
+  /* @media screen and (max-width: 450px) {
     max-height: 13.375rem;
-  }
+  } */
 `;
 
 const HomePageProjectsListItem: FC<{ project: ProjectInfo }> = ({
