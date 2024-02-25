@@ -28,8 +28,7 @@ const container = ({ darkmode }: { darkmode: boolean }) => css`
 const image = css`
   height: 4.5rem;
   min-height: 4.5rem;
-  min-width: min-content;
-  max-width: max-content;
+  aspect-ratio: 1/1;
 
   @media screen and (max-width: 720px) {
     height: 2.5rem;

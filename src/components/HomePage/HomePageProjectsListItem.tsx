@@ -12,8 +12,10 @@ const projectContainer = ({ darkmode }: { darkmode: boolean }) => css`
     : "rgba(0, 0, 0, 0.24) 0px 3px 8px"};
   border-radius: 2rem;
   background-color: ${darkmode ? "rgba(20,0,157,0.3)" : colors.white};
-  /* padding: 1rem; */
+  padding: 0;
   width: 100%;
+  height: auto;
+  background-color: red;
   transition: all 0.3s ease-in-out;
 
   &:hover {
@@ -29,12 +31,8 @@ const projectContainer = ({ darkmode }: { darkmode: boolean }) => css`
 const image = css`
   border-radius: 2rem;
   width: 100%;
-  height: auto;
+  min-height: 100%;
   aspect-ratio: 3/2;
-
-  /* @media screen and (max-width: 450px) {
-    max-height: 13.375rem;
-  } */
 `;
 
 const HomePageProjectsListItem: FC<{ project: ProjectInfo }> = ({
