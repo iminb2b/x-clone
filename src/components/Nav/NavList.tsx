@@ -4,8 +4,6 @@ import { AppContext } from "@/context/AppContext";
 import routeLinks from "@/routeLinks";
 import NavListItem from "./NavListItem";
 import { useRouter } from "next/router";
-import LanguageLinks from "./LanguageLinks";
-import DarkModeSettings from "./DarkModeSettings";
 
 const container = css`
   display: flex;
@@ -58,10 +56,6 @@ const NavList: FC = () => {
           isActive={router.asPath === item.url}
         />
       ))}
-
-      <LanguageLinks lang={lang} />
-
-      <DarkModeSettings />
     </div>
   );
 };
