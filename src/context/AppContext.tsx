@@ -2,16 +2,9 @@ import { ReactNode, createContext, useReducer } from "react";
 import stringsEn from "@/strings/stringsEn.json";
 import { Strings } from "@/types/stringTypes";
 
-export type AppContextType = {
-  strings: Strings;
-  lang: "en" | "vi";
-  darkmode: boolean;
-};
+export type AppContextType = {};
 
-interface AppAction {
-  type: "enableDarkMode";
-  payload: boolean;
-}
+interface AppAction {}
 
 interface AppState {
   darkmode: boolean;

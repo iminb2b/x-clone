@@ -1,4 +1,3 @@
-import colors from "@/value/colors";
 import { css } from "@emotion/react";
 
 export const contentContainer = css`
@@ -6,9 +5,8 @@ export const contentContainer = css`
   padding: 1rem;
 `;
 
-export const sectionService = ({ darkmode }: { darkmode: boolean }) => css`
+export const sectionService = css`
   font-size: clamp(1rem, 2vw, 1.375rem);
-  color: ${darkmode ? colors.green : colors.textPrimary};
 `;
 
 export const sectionTitle = css`
@@ -24,10 +22,9 @@ export const sectionDescription = css`
   line-height: 1.4;
 `;
 
-export const boxWrapper = ({ darkmode }: { darkmode: boolean }) => css`
+export const boxWrapper = css`
   position: relative;
 
-  background-color: ${darkmode ? "rgba(20,0,157,0.3)" : colors.white};
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 2rem;
   display: flex;
